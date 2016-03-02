@@ -62,8 +62,7 @@ for file in $STAGED_FILES_CMD; do
 	  ext="${filename##*.}"
 	  if [ "$ext" == "php" ] ||[ "$ext" == "module" ] || [ "$ext" == "inc" ] || [ "$ext" == "install" ] || [ "$ext" == "js" ]; then
 		  grep console.log $PROJECT/$file > /dev/null
-	      debug=$((debug + $?))
-		  echo PROJECT/$file $debug
+	          debug=$((debug + $?))
 		  if [ $debug == 0 ]; then
 			  echo -e "Debug code found in ${COL_RED}${file}${COL_RESET}:"
 			  grep -n console.log $PROJECT/$file
@@ -74,7 +73,7 @@ for file in $STAGED_FILES_CMD; do
 done
 # echo "DEBUG = $debug"
 if [ $fail != 0 ]; then
-	echo "Codign standard errors found, exiting, no commit"
+	echo "Coding standard errors found, exiting, no commit"
 	exit 1
 fi
 
