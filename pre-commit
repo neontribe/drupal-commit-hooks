@@ -20,6 +20,8 @@ if [ $? != 0 ]; then
 	exit 1
 fi
 
+# This should really check if it's there already
+export PATH=$PATH:$HOME/.composer/vendor/bin
 which phpcs > /dev/null
 if [ $? != 0 ]; then
 	echo "PHPCS not installed, use conpser to get it:"
